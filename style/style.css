@@ -1,0 +1,97 @@
+html, body {
+    height:100%;
+}
+.wrapper {
+    font:15px normal Verdana, sans-serif;
+    width:1120px;
+    height:100%;
+    margin:0 auto;
+}
+#searchProd {
+    margin:10px 0 30px;
+    width:550px;
+    height:30px;
+}
+#searchCustom {
+    margin:10px 0 30px;
+    width:480px;
+    height:30px;
+}
+.something {
+    height:400px;
+    width:600px;
+    max-height: 137px;
+    overflow-y: scroll;
+    margin-bottom:30px;
+    margin-right:30px;
+    border:3px solid #C6C3E7;
+    float:left;
+}
+.prod {
+    float:left;
+    margin:0;
+    width:290px;
+}
+.prod div {
+    width:290px;
+    border:1px solid #8CA1E7;
+    background-color:#DBD1E7;
+    text-align:center;
+    height:25px;
+}
+.prod div p, .price div p {
+    margin:0;
+}
+.price {
+    width:290px;
+    margin:0;
+    float:left;
+}
+.price div {
+    width:290px;
+    border:1px solid #8CA1E7;
+    background-color:#D8F3D8;
+    text-align:center;
+    height:25px;
+}
+.lab {
+    display:inline-block;
+    width:150px;
+}
+.numberOfProducts, .newProd, .newPrice, .numberOfCustomers {
+    margin-bottom:10px;
+}
+.client {
+    min-height:1200px;
+    width:100%;
+}
+.custom {
+    width:520px;
+    height:190px;
+    float:left;
+    margin:20px 10px;
+}
+.client div img {
+    border:3px solid #C6C3E7;
+    margin:20px 10px;
+}
+.avatar {
+    float:left;
+}
+.inf {
+    float:left;
+}
+.showButton, .createBut, .createBut1 {
+    margin:15px;
+    margin-left:0;
+    width:190px;
+    height:30px;
+}
+.createBut {
+    margin-left:168px;
+}
+.input {
+    height:30px;
+    width:200px;
+    margin-bottom:10px;
+}

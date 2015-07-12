@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+    <head>
+		<meta charset="utf-8">
+        <title>Angularjs</title>
+		<link href="style/style.css" rel="stylesheet">
+	</head>
+    
+    <body>
+        <div class="wrapper">
+            <div ng-controller='productsController'>
+                <button ng-click="toggleProducts()" class='showButton'>Show/Hide product list</button>
+                <div ng-show="showProd">
+                    <label for="searchProd">Search:</label>
+                    <input id="searchProd" ng-model='text'></input>
+                    <div class="something">
+                        <div class="prod">
+                            <div ng-repeat='prod in products |filter:text track by $index'>
+                                <p>{{prod.title}}</p>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <div ng-repeat='prod in products|filter:text'>
+                                <p>{{prod.price}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="numberOfProducts">Total number of products: <b>{{products.length}}</b>
+                    </div>
+                    <form>
+                        <div class="newProd">
+                            <label for="title" class="lab">Title of product:</label>
+                            <input id="title" ng-model="newProd.title" type=t ext class="input">
+                        </div>
+                        <div class="newPrice">
+                            <label for="price" class="lab">Price of product:</label>
+                            <input id="price" ng-model="newProd.price" type="number" class="input">
+                        </div>
+                        <button ng-click='create()' class="createBut">Add new product</button>
+                    </form>
+                </div>
+            </div>
+            <div ng-controller='clientController'>
+                <button ng-click="toggleCustomers()" class='showButton'>Show/Hide customers list</button>
+                <div ng-show="showCustom">
+                    <div class="numberOfCustomers">Total number of customer: <b>{{customer.length}}</b>
+                    </div>
+                    <form>
+                        <div class="newCustom">
+                            <label for="avatar" class="lab">Customer photo(url):</label>
+                            <input id="avatar" ng-model="newCustom.avatar" type="text" class="input">
+                        </div>
+                        <div class="newCustom">
+                            <label for="name" class="lab">Customer name:</label>
+                            <input id="name" ng-model="newCustom.name" type="text" class="input">
+                        </div>
+                        <div class="newCustom">
+                            <label for="city" class="lab">Customer city:</label>
+                            <input id="city" ng-model="newCustom.city" type="text" class="input">
+                        </div>
+                        <div class="newCustom">
+                            <label for="age" class="lab">Customer age:</label>
+                            <input id="age" ng-model="newCustom.age" type="number" class="input">
+                        </div>
+                        <button ng-click="create()" class="createBut1">Create new customer</button>
+                    </form>
+                    <label for="searchCustom">Searching by name:</label>
+                    <input id="searchCustom" type="text" ng-model='text.name'></input>
+                    <div class="client">
+                        <div ng-repeat='client in customer|filter:text track by $index' class="custom">	<span class="avatar"><button ng-click = "deleteEl(client)" class = "del">x</button><img ng-src = "{{client.avatar}}"/></span>
+	<span class="inf">
+					<p>{{customText}}</p>
+					<p>Name:{{client.name|uppercase}}</p>
+					<p>City:{{client.city}}</p>
+					<p>Age:{{client.age}}</p>
+					</span>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<script src="js/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/bproductsController.js"></script>
+		<script src="js/clientController.js"></script>
+    </body>
+   </html>
